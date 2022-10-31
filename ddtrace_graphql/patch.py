@@ -5,7 +5,6 @@ https://github.com/graphql-python/graphql-core
 """
 
 import logging
-import os
 
 import graphql
 import graphql.backend.core
