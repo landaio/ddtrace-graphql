@@ -10,7 +10,7 @@ import os
 import graphql
 import graphql.backend.core
 import wrapt
-from ddtrace.util import unwrap
+from ddtrace.internal.utils.wrappers import unwrap
 
 from ddtrace_graphql.base import traced_graphql_wrapped
 
