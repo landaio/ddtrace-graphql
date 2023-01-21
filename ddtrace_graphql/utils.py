@@ -3,8 +3,8 @@ import re
 import traceback
 from io import StringIO
 
-from graphql.error import GraphQLError, format_error
-from graphql.language.ast import Document
+from graphql.error import GraphQLError
+from graphql.language.ast import DocumentNode as Document
 
 
 def get_request_string(args, kwargs):
@@ -68,7 +68,7 @@ def format_errors(errors):
     return json.dumps(
         [
             # fix for graphql-core==1.x
-            format_error(err) if hasattr(err, 'message') else str(err)
+            err.formatted if hasattr(err, 'message') else str(err)
             for err in errors
         ],
         indent=2,
